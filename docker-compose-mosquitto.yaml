@@ -1,0 +1,8 @@
+version: '3.2'
+
+services:
+
+  mosquitto:
+    image: dakl/rpi-mosquitto
+    ports:
+      - "1883:1883"
