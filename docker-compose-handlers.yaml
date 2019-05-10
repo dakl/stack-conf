@@ -8,6 +8,17 @@ services:
        - relay_hub_device_id
        - lego_house_device_id
        - particle_access_token
+    environment:
+        - TOPIC_NAME=relay
+
+  lego-house-lights-handler:
+    image: dakl/particle-relay-hub-handler:latest
+    secrets:
+       - relay_hub_device_id
+       - lego_house_device_id
+       - particle_access_token
+    environment:
+        - TOPIC_NAME=lego
 
   tv-backlight-handler:
     image: dakl/tv-backlight-handler:latest
