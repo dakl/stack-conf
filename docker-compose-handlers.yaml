@@ -9,7 +9,7 @@ services:
        - lego_house_device_id
        - particle_access_token
     environment:
-        - TOPIC_NAME=relay
+       - TOPIC_NAME=relay
 
   lego-house-lights-handler:
     image: dakl/particle-relay-hub-handler:latest
@@ -18,13 +18,22 @@ services:
        - lego_house_device_id
        - particle_access_token
     environment:
-        - TOPIC_NAME=lego
+       - TOPIC_NAME=lego
 
   tv-backlight-handler:
     image: dakl/tv-backlight-handler:latest
     secrets:
        - tv_backlight_device_id
        - particle_access_token
+
+  picamera:
+    image: dakl/picamera:latest
+    devices: 
+     - /dev/vchiq
+    ports:
+     - 8000:8000
+    secrets:
+     - picam_password
 
 secrets:
   tv_backlight_device_id:
@@ -34,4 +43,6 @@ secrets:
   relay_hub_device_id:
     external: true
   particle_access_token:
+    external: true
+  picam_password:
     external: true
