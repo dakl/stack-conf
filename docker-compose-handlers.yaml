@@ -26,15 +26,6 @@ services:
        - tv_backlight_device_id
        - particle_access_token
 
-  picamera:
-    image: dakl/picamera:latest
-    devices: 
-     - /dev/vchiq
-    ports:
-     - 8000:8000
-    secrets:
-     - picam_password
-
 secrets:
   tv_backlight_device_id:
     external: true
@@ -43,6 +34,4 @@ secrets:
   relay_hub_device_id:
     external: true
   particle_access_token:
-    external: true
-  picam_password:
     external: true
