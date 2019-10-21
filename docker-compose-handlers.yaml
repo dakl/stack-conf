@@ -29,6 +29,10 @@ services:
     secrets:
        - tv_backlight_device_id
        - particle_access_token
+    environment:
+        - TOPIC_NAME=tvbacklight
+        - PARTICLE_BASE_URL=https://api.particle.io/v1/devices
+        - BROKER=hassio.local
 
 secrets:
   tv_backlight_device_id:
