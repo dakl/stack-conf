@@ -11,7 +11,7 @@ services:
     environment:
         - TOPIC_NAME=relay
         - PARTICLE_BASE_URL=https://api.particle.io/v1/devices
-        - BROKER=hassio.local
+        - BROKER=hassio
 
   lego-house-lights-handler:
     image: dakl/particle-relay-hub-handler:latest
@@ -22,7 +22,7 @@ services:
     environment:
         - TOPIC_NAME=lego
         - PARTICLE_BASE_URL=https://api.particle.io/v1/devices
-        - BROKER=hassio.local
+        - BROKER=hassio
 
   tv-backlight-handler:
     image: dakl/tv-backlight-handler:latest
