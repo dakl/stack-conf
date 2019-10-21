@@ -32,7 +32,7 @@ services:
     environment:
         - TOPIC_NAME=tvbacklight
         - PARTICLE_BASE_URL=https://api.particle.io/v1/devices
-        - BROKER=hassio.local
+        - BROKER=hassio
 
 secrets:
   tv_backlight_device_id:
