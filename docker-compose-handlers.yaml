@@ -13,24 +13,12 @@ services:
         - PARTICLE_BASE_URL=https://api.particle.io/v1/devices
         - BROKER=hassio
 
-  lego-house-lights-handler:
-    image: dakl/particle-relay-hub-handler:latest
-    secrets:
-       - relay_hub_device_id
-       - lego_house_device_id
-       - particle_access_token
-    environment:
-        - TOPIC_NAME=lego
-        - PARTICLE_BASE_URL=https://api.particle.io/v1/devices
-        - BROKER=hassio
-
   tv-backlight-handler:
     image: dakl/tv-backlight-handler:latest
     secrets:
        - tv_backlight_device_id
        - particle_access_token
     environment:
-        - TOPIC_NAME=tvbacklight
         - PARTICLE_BASE_URL=https://api.particle.io/v1/devices
         - BROKER=hassio
 
